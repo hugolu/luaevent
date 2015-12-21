@@ -93,6 +93,10 @@ function _M.connect(sock, ...)
 	end
 	return ret, err
 end
+function _M.close(sock)
+        if clientTable[sock] then clientTable[sock]:close() end
+        sock:close()
+end
 -- Deprecated..
 function _M.flush(sock)
 end
