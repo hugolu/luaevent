@@ -13,7 +13,7 @@ end
 
 local function echoHandler(skt)
   while true do
-    local data,ret = luaevent.receive(skt, 10)
+    local data,ret = luaevent.receive(skt, "*l")
     --print("GOT: ", data, ret)
     if data == "quit" or ret == 'closed' then
       break
@@ -21,7 +21,7 @@ local function echoHandler(skt)
     luaevent.send(skt, data)
     collectgarbage()
   end
-  skt:close()
+  luaevent.close(skt)
   --print("DONE")
 end
 local server = assert(socket.bind("localhost", 20000))
