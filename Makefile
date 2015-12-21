@@ -12,10 +12,10 @@ CFLAGS = -Wall -fpic
 LDFLAGS = -shared
 
 # Directories
-LUA_INC_DIR ?= /usr/include/lua5.1
+LUA_INC_DIR ?= /usr/local/include/lua5.3
 
-INSTALL_DIR_LUA ?= /usr/share/lua/5.1
-INSTALL_DIR_BIN ?= /usr/lib/lua/5.1
+INSTALL_DIR_LUA ?= /usr/local/share/lua/5.3
+INSTALL_DIR_BIN ?= /usr/local/lib/lua/5.3
 
 # Files
 LIB = core.so
